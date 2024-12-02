@@ -9,9 +9,10 @@ namespace Apuntes.Models
 {
     internal class About
     {
-        public string Title => AppInfo.Name;
-        public string Version => AppInfo.VersionString;
+        public string Title => "Sebastián Almeida";
         public string MoreInfoUrl => "https://aka.ms/maui";
-        public string Messsage => "Esta aplicación esta escrita en XAML y C# con .NET MAUI.";
+        public string Message => "Apasionado por la tecnología, los videojuegos y la programación, se encuentra estudiando Ingeniería de Software con la firme meta de convertirse en un programador profesional. " +
+            "Su espíritu curioso lo lleva a explorar nuevas culturas y lugares a través de los viajes, combinando su amor por la innovación con una visión abierta del mundo. Siempre buscando aprender y crecer, " +
+            "está comprometido con desarrollar habilidades que lo lleven a destacar en el ámbito tecnológico";
     }
 }

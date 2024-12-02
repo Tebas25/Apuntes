@@ -4,7 +4,10 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:views="clr-namespace:Apuntes.Views"
-    Shell.FlyoutBehavior="Disabled"
+    xmlns:local="clr-namespace:Apuntes"
+    Shell.FlyoutBehavior="Flyout"
+    Shell.FlyoutWidth="250"
+    FlyoutHeaderBehavior="CollapseOnScroll"
     Title="Apuntes">
     <TabBar>
         <ShellContent
@@ -17,4 +20,27 @@
             ContentTemplate="{DataTemplate views:AboutPage}"
             Icon="{OnPlatform 'icon_about.png', iOS='icon_about_ios.png', MacCatalyst='icon_about_ios.png'}" />
     </TabBar>
+
+    <FlyoutItem Title="Home">
+        <ShellContent ContentTemplate="{DataTemplate local:HomePage}" />
+    </FlyoutItem>
+    <FlyoutItem Title="Apuntes">
+        <ShellContent ContentTemplate="{DataTemplate views:NotePage}" />
+    </FlyoutItem>
+    <FlyoutItem Title="Agregar Apunte">
+        <ShellContent ContentTemplate="{DataTemplate views:AllNotesPage}" />
+    </FlyoutItem>
+    <FlyoutItem Title="About">
+        <ShellContent ContentTemplate="{DataTemplate views:AboutPage}" />
+    </FlyoutItem>
+
+    <Shell.FlyoutHeader>
+        <StackLayout Background="#FFFFFF"
+                         Padding="10">
+            <Image Source="dotnet_bot.png"
+                       HeightRequest="80"
+                       HorizontalOptions="Center"/>
+        </StackLayout>
+    </Shell.FlyoutHeader>
+
 </Shell>

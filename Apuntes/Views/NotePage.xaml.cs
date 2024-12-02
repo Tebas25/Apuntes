@@ -8,6 +8,8 @@ public partial class NotePage : ContentPage
 		InitializeComponent();
         string appDataPath = FileSystem.AppDataDirectory;
         string randomfileName = $"{Path.GetRandomFileName()}.apuntes.txt";
+
+        LoadNote(Path.Combine(appDataPath, randomfileName));
 	}
 
     private async void Guardar_Clicked(object sender, EventArgs e)
@@ -41,6 +43,7 @@ public partial class NotePage : ContentPage
             noteModel.Date = File.GetCreationTime(fileName);
             noteModel.Text = File.ReadAllText(fileName);
         }
+        BindingContext = noteModel;
     }
 
     public string ItemId
